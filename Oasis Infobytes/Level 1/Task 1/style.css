@@ -1,0 +1,132 @@
+body{
+    text-align:center;
+}
+/* conatiner */
+.container-fluid{
+    padding: 7% 15%;
+}
+
+/* Top Section */
+#top {
+    /* background-color: #ff4c68; */
+    background-image: url("bg2.webp");
+    background-repeat: no-repeat;
+    /* object-fit:cover; */
+    background-size:cover;
+    /* width:100%; */
+    color: #fff;
+    text-align: left;
+  }
+  
+  #top .container-fluid {
+    padding: 3% 15% 7%;
+  }
+    /* Navbar */
+    .navbar {
+        padding: 0 0 4.5rem;
+      }
+      
+      .navbar-brand {
+        font-family: "Ubuntu";
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      
+      .nav-item {
+        padding: 0 18px;
+      }
+      
+      .nav-link {
+        font-size: 1.2rem;
+        font-family: "Montserrat-Light";
+      }
+      .download-button {
+        margin: 5% 3% 5% 0;
+      }
+
+
+
+.centered {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    font-size: 10px;
+    transform: translate(-50%, -50%);
+  }
+  
+/* Specifications */
+
+ #middle{
+    position: relative;
+ }
+ .middle-title {
+    font-size: 1.5rem;
+  }
+  
+  .middle-box {
+    padding: 4.5%;
+  }
+  
+  .icon {
+    color: #ef8172;
+    margin-bottom: 1rem;
+  }
+  
+  .icon:hover {
+    color: #ff4c68;
+  }
+  
+
+
+/* Features */
+#features{
+    position:relative;
+}
+.feat-image{
+    width: 200px;
+    height: 200px;
+}
+
+
+/* bottom */
+#bottom{
+    /* background-image: url("worldmap.avif"); */
+    position: relative;
+    /* margin-left:50%; */
+}
+.ret{
+  margin-left:30%;
+}
+.worldmap{
+    width:200px;
+    height:200px;
+    margin-left:50%;   
+
+}
+
+.cyan-section {
+    background-color: cyan;
+  }
+
+@media (max-width: 1028px) {
+  
+    #top {
+      text-align: center;
+    }
+  
+    .top-image {
+      position: static;
+      transform: rotate(0);
+    }
+  }
+
+  #features {
+    position: relative;
+  }
+
+
+
+
+  .align{
+    text-align: center;
+  }
