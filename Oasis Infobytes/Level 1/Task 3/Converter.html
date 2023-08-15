@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input, select {
+    padding: 5px;
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  #result {
+    margin-top: 20px;
+  }
+</style>
+<title>Temperature Converter</title>
+</head>
+<body>
+  <h1>Temperature Converter</h1>
+  <label for="temperature">Enter Temperature:</label>
+  <input type="text" id="temperature" placeholder="Enter temperature" />
+  <br>
+  <label for="unit">Choose Unit:</label>
+  <select id="unit">
+    <option value="celsius">Celsius</option>
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="kelvin">Kelvin</option>
+  </select>
+  <br>
+  <button id="convertBtn">Convert</button>
+  <div id="result"></div>
+
+  <script>
+    const convertButton = document.getElementById('convertBtn');
+    const resultDisplay = document.getElementById('result');
+
+    convertButton.addEventListener('click', () => {
+      const temperatureInput = document.getElementById('temperature').value;
+      const unitSelect = document.getElementById('unit').value;
+      let convertedTemperature = '';
+
+      if (!isNaN(temperatureInput)) {
+        const temperature = parseFloat(temperatureInput);
+
+        if (unitSelect === 'celsius') {
+          convertedTemperature = `${temperature.toFixed(2)} °C is equal to ${(temperature * 9/5 + 32).toFixed(2)} °F`;
+        } else if (unitSelect === 'fahrenheit') {
+          convertedTemperature = `${temperature.toFixed(2)} °F is equal to ${(5/9 * (temperature - 32)).toFixed(2)} °C`;
+        } else if (unitSelect === 'kelvin') {
+          convertedTemperature = `${temperature.toFixed(2)} K is equal to ${(temperature - 273.15).toFixed(2)} °C and ${(9/5 * (temperature - 273.15) + 32).toFixed(2)} °F`;
+        }
+      } else {
+        convertedTemperature = 'Please enter a valid temperature.';
+      }
+
+      resultDisplay.textContent = convertedTemperature;
+    });
+  </script>
+</body>
+</html>
